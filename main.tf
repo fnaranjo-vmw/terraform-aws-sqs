@@ -25,6 +25,10 @@ resource "aws_sqs_queue" "this" {
   visibility_timeout_seconds        = var.visibility_timeout_seconds
 
   tags = var.tags
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 ################################################################################
